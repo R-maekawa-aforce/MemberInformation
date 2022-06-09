@@ -12,9 +12,6 @@ import javax.servlet.http.HttpSession;
 import jp.co.aforce.dao.MemberDAO;
 import jp.co.aforce.tool.ConstNum;
 
-/**
- * Servlet implementation class Delete
- */
 @WebServlet("/jp.co.aforce.servlets/delete")
 public class Delete extends HttpServlet {
 

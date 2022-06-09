@@ -36,8 +36,8 @@
 		<dd>
 			<c:choose>
 			<c:when test="${member.sex == '1'}">
-			<input type ="radio" name = "sex" value = "1"  checked="checked">男　
-			<input type ="radio" name = "sex" value = "2" >女
+			<input type ="radio" name = "sex" value = "1"  checked="checked" disabled="disabled">男　
+			<input type ="radio" name = "sex" value = "2" disabled="disabled">女
 			</c:when>
 			<c:when test="${member.sex == '2'}">
 			<input type ="radio" name = "sex" value = "1"  disabled="disabled">男　
@@ -54,9 +54,6 @@
 		<dd>
 		<select name = "birth_year"  disabled="disabled">
 			<option value = ""selected disabled="disabled"></option>
-			<c:forEach var = "i" begin = "1920" end = "2020">
-			<option value = "${i}">${i}</option>
-			</c:forEach>
 		<c:if test="${not empty member.birth_year}">
 			<option value = "${member.birth_year}"selected disabled="disabled">${member.birth_year}</option>
 		</c:if>
@@ -64,19 +61,14 @@
 
 		<select name = "birth_month"  disabled="disabled">
 			<option value = ""selected disabled="disabled"></option>
-			<c:forEach var = "i" begin = "1" end = "12">
-			<option value = "${i}">${i}</option>
-			</c:forEach>
+
 		<c:if test="${not empty member.birth_month}">
 		<option value = "${member.birth_month}"selected disabled="disabled">${member.birth_month}</option>
 		</c:if>
 		</select>月
 
 		<select name = "birth_day"  disabled="disabled">
-			<option value = ""selected disabled="disabled"></option>
-			<c:forEach var = "i" begin = "1" end = "31">
-			<option value = "${i}">${i}</option>
-			</c:forEach>
+
 		<c:if test="${not empty member.birth_day}">
 		<option value = "${member.birth_day}"selected disabled="disabled">${member.birth_day}</option>
 		</c:if>
@@ -87,10 +79,6 @@
 		<dd>
 		<select name = "job"  disabled="disabled">
 			<option value = ""selected disabled="disabled"></option>
-			<option value = "100">会社員</option>
-			<option value = "200">自営業</option>
-			<option value = "300">学生</option>
-			<option value = "400">その他</option>
 		<c:if test="${not empty member.job}">
 			<c:choose>
 				<c:when test="${member.job == '100' }">
