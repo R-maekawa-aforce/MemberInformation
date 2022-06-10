@@ -5,45 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import jp.co.aforce.beans.MemberInfo;
+import jp.co.aforce.tool.ConstNum;
 
 public class MemberDAO extends DAO{
-
-	public int insert(
-			String member_id,
-			String last_name,
-			String first_name,
-			String sex,
-			int birth_year,
-			int birth_month,
-			int birth_day,
-			String job,
-			String phone_number,
-			String mail_address) throws Exception {
-		Connection con = getConnection();
-
-
-
-		String sql = "INSERT INTO member_info VALUES(?,?,?,?,?,?,?,?,?,?)";
-
-		PreparedStatement st = con.prepareStatement(sql);
-		st.setString(1, member_id);
-		st.setString(2, last_name);
-		st.setString(3, first_name);
-		st.setString(4, sex);
-		st.setInt(5, birth_year);
-		st.setInt(6, birth_month);
-		st.setInt(7, birth_day);
-		st.setString(8, job);
-		st.setString(9, phone_number);
-		st.setString(10, mail_address);
-		int line = st.executeUpdate();
-
-		st.close();
-		con.close();
-		return line;
-
-	}
-
 	public int check(
 			String last_name,
 			String first_name,
@@ -57,9 +21,7 @@ public class MemberDAO extends DAO{
 
 		Connection con = getConnection();
 
-		String sql = "SELECT COUNT(*) FROM member_info WHERE last_name = ? AND first_name = ? AND sex = ? AND  birth_year = ? AND birth_month = ? AND birth_day = ? AND job = ? AND phone_number = ? AND mail_address = ?";
-
-		PreparedStatement st = con.prepareStatement(sql);
+		PreparedStatement st = con.prepareStatement(ConstNum.SQL_KK01_S01);
 		st.setString(1, last_name);
 		st.setString(2, first_name);
 		st.setString(3, sex);
@@ -82,8 +44,7 @@ public class MemberDAO extends DAO{
 		return count;
 	}
 
-
-	public int update (
+	public int insert(
 			String member_id,
 			String last_name,
 			String first_name,
@@ -93,30 +54,26 @@ public class MemberDAO extends DAO{
 			int birth_day,
 			String job,
 			String phone_number,
-			String mail_address) throws Exception{
-
+			String mail_address) throws Exception {
 		Connection con = getConnection();
 
-		String sql = "UPDATE member_info SET last_name = ?, first_name = ?, sex = ?,  birth_year = ?, birth_month = ?, birth_day = ?, job = ?, phone_number = ?, mail_address = ? WHERE member_id = ?";
-
-		PreparedStatement st = con.prepareStatement(sql);
-		st.setString(1, last_name);
-		st.setString(2, first_name);
-		st.setString(3, sex);
-		st.setInt(4, birth_year);
-		st.setInt(5, birth_month);
-		st.setInt(6, birth_day);
-		st.setString(7, job);
-		st.setString(8, phone_number);
-		st.setString(9, mail_address);
-		st.setString(10,member_id);
-
+		PreparedStatement st = con.prepareStatement(ConstNum.SQL_KK01_I01);
+		st.setString(1, member_id);
+		st.setString(2, last_name);
+		st.setString(3, first_name);
+		st.setString(4, sex);
+		st.setInt(5, birth_year);
+		st.setInt(6, birth_month);
+		st.setInt(7, birth_day);
+		st.setString(8, job);
+		st.setString(9, phone_number);
+		st.setString(10, mail_address);
 		int line = st.executeUpdate();
 
 		st.close();
 		con.close();
-
 		return line;
+
 	}
 
 	public MemberInfo seach(String member_id) throws Exception {
@@ -124,7 +81,7 @@ public class MemberDAO extends DAO{
 
 		MemberInfo m = new MemberInfo();
 
-		PreparedStatement st = con.prepareStatement("SELECT * FROM member_info WHERE member_id = ?");
+		PreparedStatement st = con.prepareStatement(ConstNum.SQL_KK02_S01);
 		st.setString(1, member_id);
 
 		ResultSet rs = st.executeQuery();
@@ -150,11 +107,46 @@ public class MemberDAO extends DAO{
 
 	}
 
+
+	public int update (
+			String member_id,
+			String last_name,
+			String first_name,
+			String sex,
+			int birth_year,
+			int birth_month,
+			int birth_day,
+			String job,
+			String phone_number,
+			String mail_address) throws Exception{
+
+		Connection con = getConnection();
+
+		PreparedStatement st = con.prepareStatement(ConstNum.SQL_KK02_U01);
+		st.setString(1, last_name);
+		st.setString(2, first_name);
+		st.setString(3, sex);
+		st.setInt(4, birth_year);
+		st.setInt(5, birth_month);
+		st.setInt(6, birth_day);
+		st.setString(7, job);
+		st.setString(8, phone_number);
+		st.setString(9, mail_address);
+		st.setString(10,member_id);
+
+		int line = st.executeUpdate();
+
+		st.close();
+		con.close();
+
+		return line;
+	}
+
+
 	public int delete(String member_id) throws Exception{
 		Connection con = getConnection();
 
-		String sql = "DELETE FROM member_info WHERE member_id = ?";
-		PreparedStatement st = con.prepareStatement(sql);
+		PreparedStatement st = con.prepareStatement(ConstNum.SQL_KK03_D01);
 		st.setString(1, member_id);
 
 		int line = st.executeUpdate();

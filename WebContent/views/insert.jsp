@@ -26,37 +26,37 @@
 		<dl>
 		<dt>■名前</dt>
 		<dd>
-		性　<input type ="text" name = "last_name" >
-		名　<input type = "text" name = "first_name" >
+			性　<input type ="text" name = "last_name" >
+			名　<input type = "text" name = "first_name" >
 		</dd>
 
 		<dt>■性別<dt>
 		<dd>
-		<input type ="radio" name = "sex" value = "1" >男　
-		<input type = "radio" name = "sex" value = "2" >女
+			<input type ="radio" name = "sex" value = "1" >男　
+			<input type = "radio" name = "sex" value = "2" >女
 		</dd>
 
 		<dt>■生年月日</dt>
 		<dd>
-		<select name = "birth_year" >
+		<select name = "birth_year"  class = "birth-year">
 			<option value = ""selected disabled="disabled"></option>
-			<c:forEach var = "i" begin = "1920" end = "2020">
-			<option value = "${i}">${i}</option>
-			</c:forEach>
+				<c:forEach var = "i" begin = "1920" end = "2020">
+					<option value = "${i}">${i}</option>
+				</c:forEach>
 		</select>年
 
-		<select name = "birth_month" >
+		<select name = "birth_month"   class = "birth-month">
 			<option value = ""selected disabled="disabled"></option>
-			<c:forEach var = "i" begin = "1" end = "12">
-			<option value = "${i}">${i}</option>
-			</c:forEach>
+				<c:forEach var = "i" begin = "1" end = "12">
+					<option value = "${i}">${i}</option>
+				</c:forEach>
 		</select>月
 
-		<select name = "birth_day" >
+		<select name = "birth_day"  class = "birth-day" >
 			<option value = ""selected disabled="disabled"></option>
-			<c:forEach var = "i" begin = "1" end = "31">
-			<option value = "${i}">${i}</option>
-			</c:forEach>
+				<c:forEach var = "i" begin = "1" end = "31">
+					<option value = "${i}">${i}</option>
+				</c:forEach>
 		</select>日
 		</dd>
 
@@ -73,12 +73,12 @@
 
 		<dt>■電話番号</dt>
 		<dd>
-		<input type = "tel" name = "phone_number" >
+			<input type = "tel" name = "phone_number" >
 		</dd>
 
 		<dt>■メールアドレス</dt>
 		<dd>
-		<input type = "text" name = "mail_address" >
+			<input type = "text" name = "mail_address" >
 		</dd>
 
 		<dd>

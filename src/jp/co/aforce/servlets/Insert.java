@@ -69,6 +69,7 @@ public class Insert extends HttpServlet {
 				m.setMember_id(member_id);
 
 				int count = dao.check(last_name, first_name, sex, birth_year, birth_month, birth_day, job, phone_number, mail_address);
+
 					if(count > 0) {
 						request.setAttribute("E_WKK0001", ConstNum.E_WKK0001);
 						request.getRequestDispatcher("../views/insert.jsp").forward(request, response);
@@ -88,13 +89,13 @@ public class Insert extends HttpServlet {
 								request.getRequestDispatcher("../views/insert.jsp").forward(request, response);
 							}
 						}catch(Exception e) {
-							request.setAttribute("E_WKK0002", ConstNum.E_WKK0002);
+							request.setAttribute("E_WKK0000", ConstNum.E_WKK0000);
 							request.getRequestDispatcher("../views/insert.jsp").forward(request, response);
 							e.printStackTrace();
 						}
 					}
 			} catch (Exception e) {
-				request.setAttribute("E_WKK0002", ConstNum.E_WKK0002);
+				request.setAttribute("E_WKK0000", ConstNum.E_WKK0000);
 				request.getRequestDispatcher("../views/insert.jsp").forward(request, response);
 				e.printStackTrace();
 			}

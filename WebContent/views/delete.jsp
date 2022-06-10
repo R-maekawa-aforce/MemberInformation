@@ -36,16 +36,16 @@
 		<dd>
 			<c:choose>
 			<c:when test="${member.sex == '1'}">
-			<input type ="radio" name = "sex" value = "1"  checked="checked" disabled="disabled">男　
-			<input type ="radio" name = "sex" value = "2" disabled="disabled">女
+				<input type ="radio" name = "sex" value = "1"  checked="checked" disabled="disabled">男　
+				<input type ="radio" name = "sex" value = "2" disabled="disabled">女
 			</c:when>
 			<c:when test="${member.sex == '2'}">
-			<input type ="radio" name = "sex" value = "1"  disabled="disabled">男　
-			<input type ="radio" name = "sex" value = "2"  checked="checked"  disabled="disabled">女
+				<input type ="radio" name = "sex" value = "1"  disabled="disabled">男　
+				<input type ="radio" name = "sex" value = "2"  checked="checked"  disabled="disabled">女
 			</c:when>
 			<c:otherwise>
-			<input type ="radio" name = "sex" value = "1" disabled="disabled" >男　
-			<input type ="radio" name = "sex" value = "2"  disabled="disabled">女
+				<input type ="radio" name = "sex" value = "1" disabled="disabled" >男　
+				<input type ="radio" name = "sex" value = "2"  disabled="disabled">女
 			</c:otherwise>
 			</c:choose>
 		</dd>
@@ -82,16 +82,16 @@
 		<c:if test="${not empty member.job}">
 			<c:choose>
 				<c:when test="${member.job == '100' }">
-				<option value = "100" selected disabled="disabled">会社員</option>
+					<option value = "100" selected disabled="disabled">会社員</option>
 				</c:when>
 				<c:when test="${member.job == '200' }">
-				<option value = "200" selected disabled="disabled">自営業</option>
+					<option value = "200" selected disabled="disabled">自営業</option>
 				</c:when>
 				<c:when test="${member.job == '300' }">
-				<option value = "300" selected disabled="disabled">学生</option>
+					<option value = "300" selected disabled="disabled">学生</option>
 				</c:when>
 				<c:when test="${member.job == '400' }">
-				<option value = "400" selected disabled="disabled">その他</option>
+					<option value = "400" selected disabled="disabled">その他</option>
 				</c:when>
 			</c:choose>
 		</c:if>
@@ -100,12 +100,12 @@
 
 		<dt>■電話番号</dt>
 		<dd>
-		<input type = "tel" name = "phone_number"  value = "${member.phone_number}" disabled="disabled">
+			<input type = "tel" name = "phone_number"  value = "${member.phone_number}" disabled="disabled">
 		</dd>
 
 		<dt>■メールアドレス</dt>
 		<dd>
-		<input type = "text" name = "mail_address"  value = "${member.mail_address}" disabled="disabled">
+			<input type = "text" name = "mail_address"  value = "${member.mail_address}" disabled="disabled">
 		</dd>
 
 		<dd>

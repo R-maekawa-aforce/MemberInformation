@@ -38,16 +38,16 @@
 		<dd>
 			<c:choose>
 			<c:when test="${member.sex == '1'}">
-			<input type ="radio" name = "sex" value = "1"  checked="checked">男　
-			<input type ="radio" name = "sex" value = "2" >女
+				<input type ="radio" name = "sex" value = "1"  checked="checked">男　
+				<input type ="radio" name = "sex" value = "2" >女
 			</c:when>
 			<c:when test="${member.sex == '2'}">
-			<input type ="radio" name = "sex" value = "1" >男　
-			<input type ="radio" name = "sex" value = "2"  checked="checked">女
+				<input type ="radio" name = "sex" value = "1" >男　
+				<input type ="radio" name = "sex" value = "2"  checked="checked">女
 			</c:when>
 			<c:otherwise>
-			<input type ="radio" name = "sex" value = "1" >男　
-			<input type ="radio" name = "sex" value = "2" >女
+				<input type ="radio" name = "sex" value = "1" >男　
+				<input type ="radio" name = "sex" value = "2" >女
 			</c:otherwise>
 			</c:choose>
 		</dd>
@@ -57,7 +57,7 @@
 		<select name = "birth_year" >
 			<option value = ""selected disabled="disabled"></option>
 			<c:forEach var = "i" begin = "1920" end = "2020">
-			<option value = "${i}">${i}</option>
+				<option value = "${i}">${i}</option>
 			</c:forEach>
 		<c:if test="${not empty member.birth_year}">
 		<option value = "${member.birth_year}"selected>${member.birth_year}</option>
@@ -67,7 +67,7 @@
 		<select name = "birth_month" >
 			<option value = ""selected disabled="disabled"></option>
 			<c:forEach var = "i" begin = "1" end = "12">
-			<option value = "${i}">${i}</option>
+				<option value = "${i}">${i}</option>
 			</c:forEach>
 		<c:if test="${not empty member.birth_month}">
 		<option value = "${member.birth_month}"selected>${member.birth_month}</option>
@@ -77,7 +77,7 @@
 		<select name = "birth_day" >
 			<option value = ""selected disabled="disabled"></option>
 			<c:forEach var = "i" begin = "1" end = "31">
-			<option value = "${i}">${i}</option>
+				<option value = "${i}">${i}</option>
 			</c:forEach>
 		<c:if test="${not empty member.birth_day}">
 		<option value = "${member.birth_day}"selected>${member.birth_day}</option>
@@ -96,16 +96,16 @@
 		<c:if test="${not empty member.job}">
 			<c:choose>
 				<c:when test="${member.job == '100' }">
-				<option value = "100" selected>会社員</option>
+					<option value = "100" selected>会社員</option>
 				</c:when>
 				<c:when test="${member.job == '200' }">
-				<option value = "200" selected>自営業</option>
+					<option value = "200" selected>自営業</option>
 				</c:when>
 				<c:when test="${member.job == '300' }">
-				<option value = "300" selected>学生</option>
+					<option value = "300" selected>学生</option>
 				</c:when>
 				<c:when test="${member.job == '400' }">
-				<option value = "400" selected>その他</option>
+					<option value = "400" selected>その他</option>
 				</c:when>
 			</c:choose>
 		</c:if>
@@ -114,12 +114,12 @@
 
 		<dt>■電話番号</dt>
 		<dd>
-		<input type = "tel" name = "phone_number"  value = "${member.phone_number}">
+			<input type = "tel" name = "phone_number"  value = "${member.phone_number}">
 		</dd>
 
 		<dt>■メールアドレス</dt>
 		<dd>
-		<input type = "text" name = "mail_address"  value = "${member.mail_address}">
+			<input type = "text" name = "mail_address"  value = "${member.mail_address}">
 		</dd>
 
 		<dd>
